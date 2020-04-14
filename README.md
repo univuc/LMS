@@ -5,4 +5,4 @@ A template repository for Node.js app.
 
 Select `Use this template` at the menu bar.
 
-Replace every occurrences of `{appname}` and `{description}` to your project's name and description.
+Replace every occurrences of `LMS` and `LMS Management System` to your project's name and description.

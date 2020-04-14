@@ -17,10 +17,14 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import minimist from 'minimist';
+import lmsAgent from '../../../lib/infrastructure/http/lmsAgent';
 
-export default function getArg(key, fallback=null) {
-    const allArgs = minimist(process.argv.slice(2));
+describe('# Get', () => {
+    it('should get lecture home', async () => {
+        await lmsAgent.get('/course/view.php?id=26093');
+    });
 
-    return allArgs[key] || fallback;
-}
+    it('should get clip viewer', async () => {
+        await lmsAgent.get('/mod/xncommons/view.php?id=249997');
+    });
+});

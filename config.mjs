@@ -1,14 +1,14 @@
 /**
- * This file is part of Univuc/{appname}.
+ * This file is part of Univuc/LMS.
  *
  * Copyright (C) 2020 Univuc <potados99@gmail.com>
  *
- * Univuc/{appname}is free software: you can redistribute it and/or modify
+ * Univuc/LMS is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Univuc/{appname} is distributed in the hope that it will be useful,
+ * Univuc/LMS is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
@@ -20,12 +20,15 @@
 import getEnv from './lib/common/utils/env';
 
 export default {
-    port: getEnv('{appname}_PORT') || 21100,
+    port: getEnv('LMS_PORT') || 21100,
 
-    slack_token: getEnv('{appname}_SLACK_TOKEN') || 'token',
-    slack_signing_secret: getEnv('{appname}_SLACK_SIGNING_SECRET') || 'secret',
+    slack_token: getEnv('LMS_SLACK_TOKEN') || 'token',
+    slack_signing_secret: getEnv('LMS_SLACK_SIGNING_SECRET') || 'secret',
 
-    web_id: getEnv('{appname}_WEB_ID') || 'master',
-    web_pw: getEnv('{appname}_WEB_PW') || '1234',
+    web_id: getEnv('LMS_WEB_ID') || 'master',
+    web_pw: getEnv('LMS_WEB_PW') || '1234',
+
+    base_url: 'https://cyber.inu.ac.kr',
+    login_url: 'https://cyber.inu.ac.kr/login.php',
 };
 
