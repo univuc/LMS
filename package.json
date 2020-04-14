@@ -1,0 +1,71 @@
+{
+  "name": "{appname}",
+  "version": "1.0.0",
+  "description": "{description}",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node -r esm index.mjs",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/univuc/{appname}.git"
+  },
+  "keywords": [
+    "{appname}"
+  ],
+  "author": "potados99",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/univuc/{appname}/issues"
+  },
+  "homepage": "https://github.com/univuc/{appname}#readme",
+  "dependencies": {
+    "@hapi/basic": "^6.0.0",
+    "@hapi/boom": "^9.1.0",
+    "@hapi/hapi": "^19.1.1",
+    "@hapi/inert": "^6.0.1",
+    "@slack/web-api": "^5.8.0",
+    "crypto": "^1.0.1",
+    "esm": "^3.2.25",
+    "minimist": "latest",
+    "redis": "^3.0.2",
+    "stack-trace": "0.0.10",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^25.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "jest": "^25.3.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.?(m)js?(x)",
+      "**/?(*.)(spec|test).?(m)js?(x)"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{mjs,js,}",
+      "!index.mjs",
+      "!config.mjs",
+      "!test/**",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.m?js$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "./node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "mjs"
+    ]
+  }
+}
