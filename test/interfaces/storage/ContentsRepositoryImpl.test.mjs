@@ -32,6 +32,10 @@ describe('# Get lectures', () => {
 
       const lectures = await contentsRepo.getLectures(getEnv('TEST_ID'));
 
-      console.log(lectures);
+      lectures.forEach((lecture) => {
+         expect(lecture.id).toBeGreaterThanOrEqual(20000);
+         expect(lecture.id).toBeLessThan(30000);
+      });
    });
 });
+
