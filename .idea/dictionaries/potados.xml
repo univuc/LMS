@@ -1,11 +1,16 @@
 <component name="ProjectDictionaryState">
   <dictionary name="potados">
     <words>
+      <w>activityicon</w>
+      <w>activityinstance</w>
       <w>axios</w>
       <w>coursemos</w>
+      <w>displayoptions</w>
+      <w>econtents</w>
       <w>hapi</w>
       <w>slackbot</w>
       <w>univuc</w>
+      <w>xncommons</w>
     </words>
   </dictionary>
 </component>

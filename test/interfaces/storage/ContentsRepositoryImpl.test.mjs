@@ -30,12 +30,31 @@ describe('# Get lectures', () => {
    it('should reach lms home', async () => {
       const contentsRepo = resolve(ContentsRepository);
 
-      const lectures = await contentsRepo.getLectures(getEnv('TEST_ID'));
+      const courses = await contentsRepo.getCourses(getEnv('TEST_ID'));
 
-      lectures.forEach((lecture) => {
-         expect(lecture.id).toBeGreaterThanOrEqual(20000);
-         expect(lecture.id).toBeLessThan(30000);
+      courses.forEach((course) => {
+         expect(course.id).toBeGreaterThanOrEqual(20000);
+         expect(course.id).toBeLessThan(30000);
       });
    });
 });
 
+describe('# Get assignments', () => {
+   it('should get assignments', async () => {
+      const contentsRepo = resolve(ContentsRepository);
+
+      const courses = await contentsRepo.getAssignments(getEnv('TEST_ID'), 26590);
+
+      console.log(courses);
+   });
+});
+
+describe('# Get clips', () => {
+   it('should get clips', async () => {
+      const contentsRepo = resolve(ContentsRepository);
+
+      const clips = await contentsRepo.getClips(getEnv('TEST_ID'), 26590);
+
+      console.log(clips);
+   });
+});

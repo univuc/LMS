@@ -29,9 +29,18 @@ export default {
     web_pw: getEnv('LMS_WEB_PW') || '1234',
 
     base_url: 'https://cyber.inu.ac.kr',
-    login_path: '/login/index.php',
-    course_path: '/course/view.php',
-
     kicked_url: 'https://cyber.inu.ac.kr/login.php',
+
+    path: {
+        login: '/login/index.php',
+        course: '/course/view.php',
+    },
+
+    type: {
+        assignment: '과제',
+        vod: '동영상',
+        econtents: '이러닝콘텐츠',
+        xncommons: '콘텐츠 CMS',
+    },
 };
 
