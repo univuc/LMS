@@ -17,14 +17,29 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import lmsAgent from '../../../lib/infrastructure/http/lmsAgent';
+import LmsAgent from '../../../lib/infrastructure/http/LmsAgent';
+import User from '../../../lib/domain/entities/User';
+import getEnv from '../../../lib/common/utils/env';
 
 describe('# Get', () => {
+    const getAgent = () => {
+        const user = new User({
+            id: getEnv('TEST_ID'),
+            password: getEnv('TEST_PW'),
+        });
+
+        return new LmsAgent({user});
+    };
+
     it('should get lecture home', async () => {
-        await lmsAgent.get('/course/view.php?id=26093');
+        const agent = getAgent();
+
+        await agent.get('/course/view.php?id=26093');
     });
 
     it('should get clip viewer', async () => {
-        await lmsAgent.get('/mod/xncommons/view.php?id=249997');
+        const agent = getAgent();
+
+        await agent.get('/mod/xncommons/view.php?id=249997');
     });
 });

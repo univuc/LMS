@@ -18,8 +18,19 @@
  */
 
 import createServer from './lib/infrastructure/webserver/server';
+import modules from './lib/common/di/modules';
+import {init} from './lib/common/di/resolve';
 
 async function start() {
+    await startInjector();
+    await startServer();
+}
+
+async function startInjector() {
+    await init(modules);
+}
+
+async function startServer() {
     const server = await createServer();
 
     server.start();
