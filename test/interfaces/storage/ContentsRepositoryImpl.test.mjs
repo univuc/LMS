@@ -17,9 +17,21 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-describe('# Hello world test', () => {
-    it('should say hello world', () => {
-        console.log('hello, world!');
-        expect(1).toBe(1);
-    });
+import resolve, {init} from '../../../lib/common/di/resolve';
+import modules from '../../../lib/common/di/modules';
+import ContentsRepository from '../../../lib/domain/repositories/ContentsRepository';
+import getEnv from '../../../lib/common/utils/env';
+
+beforeAll(async () => {
+   await init(modules);
+});
+
+describe('# Get lectures', () => {
+   it('should reach lms home', async () => {
+      const contentsRepo = resolve(ContentsRepository);
+
+      const lectures = await contentsRepo.getLectures(getEnv('TEST_ID'));
+
+      console.log(lectures);
+   });
 });

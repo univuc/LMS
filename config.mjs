@@ -30,6 +30,7 @@ export default {
 
     base_url: 'https://cyber.inu.ac.kr',
     login_path: '/login/index.php',
+    course_path: '/course/view.php',
 
     kicked_url: 'https://cyber.inu.ac.kr/login.php',
 };
