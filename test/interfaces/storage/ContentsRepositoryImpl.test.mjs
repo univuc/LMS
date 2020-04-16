@@ -19,7 +19,7 @@
 
 import resolve, {init} from '../../../lib/common/di/resolve';
 import modules from '../../../lib/common/di/modules';
-import ContentsRepository from '../../../lib/domain/repositories/ContentsRepository';
+import ContentRepository from '../../../lib/domain/repositories/ContentRepository';
 import getEnv from '../../../lib/common/utils/env';
 
 beforeAll(async () => {
@@ -28,7 +28,7 @@ beforeAll(async () => {
 
 describe('# Get lectures', () => {
    it('should reach lms home', async () => {
-      const contentsRepo = resolve(ContentsRepository);
+      const contentsRepo = resolve(ContentRepository);
 
       const courses = await contentsRepo.getCourses(getEnv('TEST_ID'));
 
@@ -41,20 +41,28 @@ describe('# Get lectures', () => {
 
 describe('# Get assignments', () => {
    it('should get assignments', async () => {
-      const contentsRepo = resolve(ContentsRepository);
+      const contentsRepo = resolve(ContentRepository);
 
-      const courses = await contentsRepo.getAssignments(getEnv('TEST_ID'), 26590);
+      const courseId = 26590;
+      const assignments = await contentsRepo.getAssignments(getEnv('TEST_ID'), courseId);
 
-      console.log(courses);
+      assignments.forEach((assignment) => {
+         expect(assignment.id).toBeGreaterThan(200000);
+         expect(assignment.courseId).toBe(courseId);
+      });
    });
 });
 
 describe('# Get clips', () => {
    it('should get clips', async () => {
-      const contentsRepo = resolve(ContentsRepository);
+      const contentsRepo = resolve(ContentRepository);
 
+      const courseId = 26590;
       const clips = await contentsRepo.getClips(getEnv('TEST_ID'), 26590);
 
-      console.log(clips);
+      clips.forEach((clip) => {
+         expect(clip.id).toBeGreaterThan(200000);
+         expect(clip.courseId).toBe(courseId);
+      });
    });
 });
