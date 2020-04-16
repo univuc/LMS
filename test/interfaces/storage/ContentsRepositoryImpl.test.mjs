@@ -23,7 +23,7 @@ import ContentRepository from '../../../lib/domain/repositories/ContentRepositor
 import getEnv from '../../../lib/common/utils/env';
 
 beforeAll(async () => {
-   await init(modules);
+   await init(modules, true);
 });
 
 describe('# Get lectures', () => {

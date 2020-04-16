@@ -25,6 +25,7 @@
     "@hapi/boom": "^9.1.0",
     "@hapi/hapi": "^19.1.1",
     "@hapi/inert": "^6.0.1",
+    "@slack/events-api": "^2.3.2",
     "@slack/web-api": "^5.8.0",
     "axios": "^0.19.2",
     "axios-cookiejar-support": "^1.0.0",
