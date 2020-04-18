@@ -19,7 +19,7 @@
 
 import resolve, {init} from '../../../lib/common/di/resolve';
 import modules from '../../../lib/common/di/modules';
-import ContentRepository from '../../../lib/domain/repositories/ContentRepository';
+import ContentInfoRepository from '../../../lib/domain/repositories/ContentInfoRepository';
 import getEnv from '../../../lib/common/utils/env';
 
 beforeAll(async () => {
@@ -28,9 +28,11 @@ beforeAll(async () => {
 
 describe('# Get courses', () => {
    it('should reach lms home', async () => {
-      const contentsRepo = resolve(ContentRepository);
+      const contentsRepo = resolve(ContentInfoRepository);
 
       const courses = await contentsRepo.getCourses(getEnv('TEST_ID'));
+
+      console.log(courses);
 
       courses.forEach((course) => {
          expect(course.id).toBeGreaterThanOrEqual(20000);
@@ -41,10 +43,12 @@ describe('# Get courses', () => {
 
 describe('# Get assignments', () => {
    it('should get assignments', async () => {
-      const contentsRepo = resolve(ContentRepository);
+      const contentsRepo = resolve(ContentInfoRepository);
 
       const courseId = 26590;
       const assignments = await contentsRepo.getAssignments(getEnv('TEST_ID'), courseId);
+
+      console.log(assignments);
 
       assignments.forEach((assignment) => {
          expect(assignment.id).toBeGreaterThan(200000);
@@ -54,15 +58,27 @@ describe('# Get assignments', () => {
 });
 
 describe('# Get clips', () => {
-   it('should get clips', async () => {
-      const contentsRepo = resolve(ContentRepository);
+   const doTest = async function(courseId) {
+      const contentsRepo = resolve(ContentInfoRepository);
 
-      const courseId = 26590;
-      const clips = await contentsRepo.getClips(getEnv('TEST_ID'), 26590);
+      const clips = await contentsRepo.getClips(getEnv('TEST_ID'), courseId);
 
       clips.forEach((clip) => {
-         expect(clip.id).toBeGreaterThan(200000);
+         expect(clip.id).toBeGreaterThan(100000);
          expect(clip.courseId).toBe(courseId);
+         expect(clip.runningTime).toBeGreaterThan(1);
       });
+   };
+
+   it('should get clips: vod', async () => {
+      await doTest(26277);
+   });
+
+   it('should get clips: econtents', async () => {
+      await doTest(27020);
+   });
+
+   it('should get clips: xncommons', async () => {
+      await doTest(26590);
    });
 });

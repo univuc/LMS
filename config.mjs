@@ -46,5 +46,9 @@ export default {
         econtents: '이러닝콘텐츠',
         xncommons: '콘텐츠 CMS',
     },
+
+    clips: {
+        threshold: 87,
+    },
 };
 

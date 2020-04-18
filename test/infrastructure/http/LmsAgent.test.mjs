@@ -39,7 +39,8 @@ describe('# Iframe', () => {
    it('should populate iframe', async () => {
         const agent = getAgent();
 
-        await agent.getXncommons(249996);
+        const result = await agent.getXncommons(249996);
+        console.log(result);
    });
 });
 
@@ -50,4 +51,4 @@ function getAgent() {
     });
 
     return new LmsAgent({user});
-};
+}
