@@ -47,6 +47,11 @@ export default {
         xncommons: '콘텐츠 CMS',
     },
 
+    assignments: {
+        cleared_label: '제출 완료',
+        not_cleared_label: '제출 안 함',
+    },
+
     clips: {
         threshold: 87,
     },

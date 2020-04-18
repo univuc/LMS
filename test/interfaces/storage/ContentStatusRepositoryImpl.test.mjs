@@ -22,6 +22,7 @@ import ContentStatusRepository from '../../../lib/domain/repositories/ContentSta
 import Clip from '../../../lib/domain/entities/Clip';
 import getEnv from '../../../lib/common/utils/env';
 import modules from '../../../lib/common/di/modules';
+import Assignment from '../../../lib/domain/entities/Assignment';
 
 beforeAll(async () => {
     await init(modules, true);
@@ -29,15 +30,19 @@ beforeAll(async () => {
 
 describe('# Check assignment', () => {
     it('should check assignments', async () => {
-        expect(1).toBe(1);
-    });
-});
+        const statusRepo = resolve(ContentStatusRepository);
 
-describe('# Check vod clip', () => {
-    const statusRepo = resolve(ContentStatusRepository);
+        const assignment = new Assignment({
+            id: 219313,
+            courseId: 26590,
+            title: '비판적사고력연습 2장 실습 과제',
+            dueStart: new Date('2020-03-24T11:00:00.000Z'),
+            dueEnd: new Date('2020-03-30T12:00:00.000Z'),
+        });
 
-    const clip = new Clip({
+        const result = await statusRepo.isAssignmentCleared(getEnv('TEST_ID'), assignment);
 
+        expect(result).toBe(true);
     });
 });
 

@@ -27,9 +27,25 @@ beforeAll(async () => {
 });
 
 describe('# Assignments', () => {
-   it('should get all assignments with statuses', async () => {
-        expect(1).toBe(1);
-   });
+    const doTest = async function(courseId) {
+        const contentRepository = resolve(ContentRepository);
+
+        const assignments = await contentRepository.getAssignmentsWithStatuses(getEnv('TEST_ID'), courseId);
+
+        console.log(assignments);
+    };
+
+   it('should get all assignments with statuses: 1', async () => {
+        await doTest(26277);
+   }, 10000);
+
+    it('should get all assignments with statuses: 2', async () => {
+        await doTest(27020);
+    }, 10000);
+
+    it('should get all assignments with statuses: 3', async () => {
+        await doTest(26590);
+    }, 10000);
 });
 
 describe('# Clips', () => {
