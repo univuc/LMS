@@ -26,7 +26,7 @@ beforeAll(async () => {
    await init(modules, true);
 });
 
-describe('# Get lectures', () => {
+describe('# Get courses', () => {
    it('should reach lms home', async () => {
       const contentsRepo = resolve(ContentRepository);
 

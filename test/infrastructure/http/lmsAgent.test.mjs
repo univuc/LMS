@@ -34,12 +34,12 @@ describe('# Get', () => {
     it('should get lecture home', async () => {
         const agent = getAgent();
 
-        await agent.get('/course/view.php?id=26093');
+        await expect(agent.get('/course/view.php?id=26093')).resolves.not.toThrow();
     });
 
     it('should get clip viewer', async () => {
         const agent = getAgent();
 
-        await agent.get('/mod/xncommons/view.php?id=249997');
+        await expect(agent.get('/mod/xncommons/view.php?id=249997')).resolves.not.toThrow();
     });
 });
