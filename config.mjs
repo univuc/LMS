@@ -53,7 +53,8 @@ export default {
     },
 
     clips: {
-        threshold: 87,
+        threshold_progress: 87,
+        target_progress: 92,
     },
 };
 
