@@ -22,15 +22,6 @@ import User from '../../../lib/domain/entities/User';
 import getEnv from '../../../lib/common/utils/env';
 
 describe('# Get', () => {
-    const getAgent = () => {
-        const user = new User({
-            id: getEnv('TEST_ID'),
-            password: getEnv('TEST_PW'),
-        });
-
-        return new LmsAgent({user});
-    };
-
     it('should get lecture home', async () => {
         const agent = getAgent();
 
@@ -43,3 +34,20 @@ describe('# Get', () => {
         await expect(agent.get('/mod/xncommons/view.php?id=249997')).resolves.not.toThrow();
     });
 });
+
+describe('# Iframe', () => {
+   it('should populate iframe', async () => {
+        const agent = getAgent();
+
+        await agent.getXncommons(249996);
+   });
+});
+
+function getAgent() {
+    const user = new User({
+        id: getEnv('TEST_ID'),
+        password: getEnv('TEST_PW'),
+    });
+
+    return new LmsAgent({user});
+};

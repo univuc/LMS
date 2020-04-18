@@ -34,6 +34,10 @@ export default {
     path: {
         login: '/login/index.php',
         course: '/course/view.php',
+        assignment: '/mod/assign/view.php',
+        vod: '/mod/vod/viewer.php',
+        econtents: '/mod/econtents/viewer.php',
+        xncommons: '/mod/xncommons/viewer.php',
     },
 
     type: {

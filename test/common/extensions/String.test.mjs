@@ -17,6 +17,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+// eslint-disable-next-line no-unused-vars
 import String from '../../../lib/common/extensions/String';
 
 describe('# Search param', () => {
