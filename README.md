@@ -1,8 +1,13 @@
-# Template
-A template repository for Node.js app.
+# LMS
 
-## Quick start
+**이러닝 관리**
 
-Select `Use this template` at the menu bar.
+## 기능
 
-Replace every occurrences of `LMS` and `LMS Management System` to your project's name and description.
+### 강의 및 과제 현황 파악 및 알림
+
+강의와 과제의 진행 현황을 파악하며, 기한 임박 시점에 완료되지 않은 강의나 과제는 알림을 보내 줍니다.
+
+### 강의 진행 상황 관리 
+
+강의 진행 상황을 읽고 쓸 수 있게 해 줍니다.
