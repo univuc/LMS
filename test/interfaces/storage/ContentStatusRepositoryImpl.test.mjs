@@ -103,11 +103,11 @@ describe('# Clear vod', () => {
 describe('# Clear xncommons', () => {
     it('should clear xncommons', async () => {
         const clip = new Clip({
-            id: 205917,
+            id: 259853,
             courseId: 28455,
             type: 'xncommons',
             title: 'Scheduling 3',
-            runningTime: 1440,
+            runningTime: 1215,
             dueStart: new Date('2020-04-20T09:00:00.000Z'),
             dueEnd: new Date('2020-04-20T10:59:00.000Z'),
         });
