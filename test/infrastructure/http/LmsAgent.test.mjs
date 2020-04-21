@@ -33,6 +33,14 @@ describe('# Get', () => {
 
         await expect(agent.get('/mod/xncommons/view.php?id=249997')).resolves.not.toThrow();
     });
+
+    it('should get xncommons', async () => {
+        const agent = getAgent();
+
+        const result = await agent.getXncommons(259853);
+
+        console.log(result);
+    });
 });
 
 describe('# Iframe', () => {

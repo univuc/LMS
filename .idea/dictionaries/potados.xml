@@ -3,7 +3,9 @@
     <words>
       <w>activityicon</w>
       <w>activityinstance</w>
+      <w>asskey</w>
       <w>axios</w>
+      <w>cmsid</w>
       <w>coursemos</w>
       <w>displayoptions</w>
       <w>econtents</w>
@@ -11,8 +13,13 @@
       <w>hapi</w>
       <w>iframes</w>
       <w>onwindow</w>
+      <w>positionnew</w>
+      <w>positionold</w>
       <w>slackbot</w>
+      <w>totalpage</w>
       <w>univuc</w>
+      <w>wsfunction</w>
+      <w>wstoken</w>
       <w>xncommons</w>
     </words>
   </dictionary>

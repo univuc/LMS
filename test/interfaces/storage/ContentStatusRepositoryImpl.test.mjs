@@ -86,8 +86,6 @@ describe('# Check xncommons clip', () => {
 
 describe('# Clear vod', () => {
     it('should clear vod', async () => {
-        const statusRepo = resolve(ContentStatusRepository);
-
         const clip = new Clip({
             id: 259679,
             courseId: 26277,
@@ -98,8 +96,30 @@ describe('# Clear vod', () => {
             dueEnd: new Date('2020-04-26T14:59:59.000Z'),
         });
 
-        const result = await statusRepo.clearClip(getEnv('TEST_ID'), clip);
-
-        console.log(`Result: ${result}`);
+        await clearClipTest(clip);
     });
 });
+
+describe('# Clear xncommons', () => {
+    it('should clear xncommons', async () => {
+        const clip = new Clip({
+            id: 205917,
+            courseId: 28455,
+            type: 'xncommons',
+            title: 'Scheduling 3',
+            runningTime: 1440,
+            dueStart: new Date('2020-04-20T09:00:00.000Z'),
+            dueEnd: new Date('2020-04-20T10:59:00.000Z'),
+        });
+
+        await clearClipTest(clip);
+    }, 20000);
+});
+
+async function clearClipTest(clip) {
+    const statusRepo = resolve(ContentStatusRepository);
+
+    const result = await statusRepo.clearClip(getEnv('TEST_ID'), clip);
+
+    console.log(`Result: ${result}`);
+}

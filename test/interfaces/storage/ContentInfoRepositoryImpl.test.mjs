@@ -83,4 +83,8 @@ describe('# Get clips', () => {
    it('should get clips: xncommons', async () => {
       await doTest(26590);
    });
+
+   it('should get clips: xncommons: 2', async () => {
+      await doTest(28455);
+   });
 });
