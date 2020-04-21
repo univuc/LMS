@@ -23,6 +23,7 @@ import Clip from '../../../lib/domain/entities/Clip';
 import getEnv from '../../../lib/common/utils/env';
 import modules from '../../../lib/common/di/modules';
 import Assignment from '../../../lib/domain/entities/Assignment';
+import sleep from '../../../lib/common/utils/sleep';
 
 beforeAll(async () => {
     await init(modules, true);
@@ -87,7 +88,7 @@ describe('# Check xncommons clip', () => {
 describe('# Clear vod', () => {
     it('should clear vod', async () => {
         const clip = new Clip({
-            id: 259679,
+            id: 259680,
             courseId: 26277,
             type: 'vod',
             title: '6주차 비대면 동영상 수업',
@@ -97,7 +98,7 @@ describe('# Clear vod', () => {
         });
 
         await clearClipTest(clip);
-    });
+    }, 30000);
 });
 
 describe('# Clear xncommons', () => {
@@ -113,13 +114,14 @@ describe('# Clear xncommons', () => {
         });
 
         await clearClipTest(clip);
-    }, 20000);
+    }, 30000);
 });
 
 async function clearClipTest(clip) {
     const statusRepo = resolve(ContentStatusRepository);
 
-    const result = await statusRepo.clearClip(getEnv('TEST_ID'), clip);
+    await statusRepo.clearClip(getEnv('TEST_ID'), clip);
 
-    console.log(`Result: ${result}`);
+    // To wait for setTimeout.
+    await sleep(10000);
 }
