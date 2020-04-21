@@ -83,3 +83,23 @@ describe('# Check xncommons clip', () => {
         expect(result).toBe(true);
     });
 });
+
+describe('# Clear vod', () => {
+    it('should clear vod', async () => {
+        const statusRepo = resolve(ContentStatusRepository);
+
+        const clip = new Clip({
+            id: 259679,
+            courseId: 26277,
+            type: 'vod',
+            title: '6주차 비대면 동영상 수업',
+            runningTime: 1520,
+            dueStart: new Date('2020-04-19T15:00:00.000Z'),
+            dueEnd: new Date('2020-04-26T14:59:59.000Z'),
+        });
+
+        const result = await statusRepo.clearClip(getEnv('TEST_ID'), clip);
+
+        console.log(`Result: ${result}`);
+    });
+});

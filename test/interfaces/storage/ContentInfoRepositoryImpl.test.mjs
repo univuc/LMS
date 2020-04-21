@@ -63,6 +63,8 @@ describe('# Get clips', () => {
 
       const clips = await contentsRepo.getClips(getEnv('TEST_ID'), courseId);
 
+      console.log(clips);
+
       clips.forEach((clip) => {
          expect(clip.id).toBeGreaterThan(100000);
          expect(clip.courseId).toBe(courseId);
