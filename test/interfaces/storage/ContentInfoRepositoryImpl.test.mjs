@@ -17,10 +17,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import resolve, {init} from 'single-injector';
+import resolve, {init} from '../../../lib/common/di/resolve';
 import modules from '../../../lib/common/di/modules';
 import ContentInfoRepository from '../../../lib/domain/repositories/ContentInfoRepository';
-import {getEnv} from 'env-arg';
+import getEnv from '../../../lib/common/utils/env';
 
 beforeAll(async () => {
    await init(modules, true);

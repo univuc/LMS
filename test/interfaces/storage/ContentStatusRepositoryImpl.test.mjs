@@ -17,13 +17,13 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import resolve, {init} from 'single-injector';
 import ContentStatusRepository from '../../../lib/domain/repositories/ContentStatusRepository';
 import Clip from '../../../lib/domain/entities/Clip';
 import modules from '../../../lib/common/di/modules';
 import Assignment from '../../../lib/domain/entities/Assignment';
 import sleep from '../../../lib/common/utils/sleep';
-import {getEnv} from 'env-arg';
+import getEnv from '../../../lib/common/utils/env';
+import resolve, {init} from '../../../lib/common/di/resolve';
 
 beforeAll(async () => {
     await init(modules, true);

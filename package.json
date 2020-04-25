@@ -31,12 +31,10 @@
     "axios-cookiejar-support": "^1.0.0",
     "cheerio": "^1.0.0-rc.3",
     "crypto": "^1.0.1",
-    "env-arg": "0.0.3",
     "esm": "^3.2.25",
     "minimist": "latest",
     "qs": "^6.9.3",
     "redis": "^3.0.2",
-    "single-injector": "0.0.4",
     "stack-trace": "0.0.10",
     "tough-cookie": "latest",
     "winston": "^3.2.1"
@@ -69,7 +67,7 @@
       "^.+\\.m?js$": "babel-jest"
     },
     "transformIgnorePatterns": [
-      "/node_modules/(?!single-injector).+\\.js$"
+      "./node_modules/"
     ],
     "moduleFileExtensions": [
       "js",
