@@ -35,6 +35,7 @@
     "minimist": "latest",
     "qs": "^6.9.3",
     "redis": "^3.0.2",
+    "single-injector": "0.0.4",
     "stack-trace": "0.0.10",
     "tough-cookie": "latest",
     "winston": "^3.2.1"

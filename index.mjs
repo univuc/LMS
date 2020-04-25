@@ -19,7 +19,7 @@
 
 import createWebServer from './lib/infrastructure/webserver/server';
 import modules from './lib/common/di/modules';
-import {init} from './lib/common/di/resolve';
+import {init} from 'single-injector';
 
 async function start() {
     await startInjector();

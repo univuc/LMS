@@ -17,7 +17,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import resolve, {init} from '../../../lib/common/di/resolve';
+import resolve, {init} from 'single-injector';
 import ContentStatusRepository from '../../../lib/domain/repositories/ContentStatusRepository';
 import Clip from '../../../lib/domain/entities/Clip';
 import getEnv from '../../../lib/common/utils/env';
