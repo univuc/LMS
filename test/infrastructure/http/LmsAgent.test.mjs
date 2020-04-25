@@ -19,7 +19,7 @@
 
 import LmsAgent from '../../../lib/infrastructure/http/LmsAgent';
 import User from '../../../lib/domain/entities/User';
-import getEnv from '../../../lib/common/utils/env';
+import {getEnv} from 'env-arg';
 
 describe('# Get', () => {
     it('should get lecture home', async () => {

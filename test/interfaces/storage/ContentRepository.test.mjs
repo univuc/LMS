@@ -20,7 +20,7 @@
 import resolve, {init} from 'single-injector';
 import modules from '../../../lib/common/di/modules';
 import ContentRepository from '../../../lib/domain/repositories/ContentRepository';
-import getEnv from '../../../lib/common/utils/env';
+import {getEnv} from 'env-arg';
 
 beforeAll(async () => {
     await init(modules, true);

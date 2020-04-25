@@ -20,10 +20,10 @@
 import resolve, {init} from 'single-injector';
 import ContentStatusRepository from '../../../lib/domain/repositories/ContentStatusRepository';
 import Clip from '../../../lib/domain/entities/Clip';
-import getEnv from '../../../lib/common/utils/env';
 import modules from '../../../lib/common/di/modules';
 import Assignment from '../../../lib/domain/entities/Assignment';
 import sleep from '../../../lib/common/utils/sleep';
+import {getEnv} from 'env-arg';
 
 beforeAll(async () => {
     await init(modules, true);
