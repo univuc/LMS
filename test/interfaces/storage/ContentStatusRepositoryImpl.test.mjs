@@ -92,7 +92,7 @@ describe('# Clear vod', () => {
             courseId: 26277,
             type: 'vod',
             title: '6주차 비대면 동영상 수업',
-            runningTime: 1520,
+            runningTime: 1616,
             dueStart: new Date('2020-04-19T15:00:00.000Z'),
             dueEnd: new Date('2020-04-26T14:59:59.000Z'),
         });

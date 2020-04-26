@@ -20,13 +20,12 @@
 import getEnv from './lib/common/utils/env';
 
 export default {
-    port: getEnv('LMS_PORT') || 21100,
+    port: getEnv('LMS_PORT') || 21101,
 
-    slack_token: getEnv('LMS_SLACK_TOKEN') || 'token',
-    slack_signing_secret: getEnv('LMS_SLACK_SIGNING_SECRET') || 'secret',
-
-    web_id: getEnv('LMS_WEB_ID') || 'master',
-    web_pw: getEnv('LMS_WEB_PW') || '1234',
+    slack: {
+        token: getEnv('LMS_SLACK_TOKEN') || 'token',
+        signing_secret: getEnv('LMS_SLACK_SIGNING_SECRET') || 'secret',
+    },
 
     base_url: 'https://cyber.inu.ac.kr',
     kicked_url: 'https://cyber.inu.ac.kr/login.php',
