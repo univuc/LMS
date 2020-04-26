@@ -57,6 +57,6 @@ LMS requires these options as environment variables:
 
 ## License
 
-LMS is released under GPL v3 license.    
+LMS is released under GPL v3.    
 You can receive a full copy of it [here](https://github.com/univuc/UAS/blob/master/LICENSE).
 
