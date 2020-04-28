@@ -20,20 +20,27 @@
 import createWebServer from './lib/infrastructure/webserver/server';
 import modules from './lib/common/di/modules';
 import {init} from './lib/common/di/resolve';
+import getArg from './lib/common/utils/args';
+import runLocal from './lib/infrastructure/console/console';
 
 async function start() {
-    await startInjector();
-    await startWebServer();
-}
-
-async function startInjector() {
+    // Start injector
     await init(modules);
+
+    if (isCommand()) {
+        // Execute single command.
+        await runLocal();
+    } else {
+        // Create server
+        const server = await createWebServer();
+
+        // Start server
+        server.start();
+    }
 }
 
-async function startWebServer() {
-    const server = await createWebServer();
-
-    server.start();
+function isCommand() {
+    return getArg('execute');
 }
 
 start();

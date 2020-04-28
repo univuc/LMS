@@ -64,5 +64,9 @@ export default {
         threshold_progress: 87,
         target_progress: 92,
     },
+
+    agent: {
+        max_retry: 5,
+    },
 };
 
