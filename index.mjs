@@ -21,15 +21,15 @@ import createWebServer from './lib/infrastructure/webserver/server';
 import modules from './lib/common/di/modules';
 import {init} from './lib/common/di/resolve';
 import getArg from './lib/common/utils/args';
-import runLocal from './lib/infrastructure/console/console';
+import directExecute from './lib/infrastructure/console/console';
 
 async function start() {
     // Start injector
     await init(modules);
 
-    if (isCommand()) {
+    if (isInDirectExecutionMode()) {
         // Execute single command.
-        await runLocal();
+        await directExecute();
     } else {
         // Create server
         const server = await createWebServer();
@@ -39,7 +39,7 @@ async function start() {
     }
 }
 
-function isCommand() {
+function isInDirectExecutionMode() {
     return getArg('execute');
 }
 

@@ -27,7 +27,7 @@ export default {
         signing_secret: getEnv('LMS_SLACK_SIGNING_SECRET') || 'secret',
     },
 
-    base_url: 'http://cyber.inu.ac.kr',
+    base_url: 'https://cyber.inu.ac.kr',
     kicked_url: 'https://cyber.inu.ac.kr/login.php',
 
     path: {
@@ -61,8 +61,8 @@ export default {
     },
 
     clips: {
-        threshold_progress: 97.8,
-        target_progress: 97.8,
+        threshold_progress: 87,
+        target_progress: 92,
     },
 
     agent: {
